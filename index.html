@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Trichy Tourism Chatbot</title>
+    <style>
+        body {
+            font-family: Arial;
+            background: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            padding-top: 40px;
+        }
+
+        .chat-container {
+            width: 380px;
+            background: #fff;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0px 0px 10px gray;
+        }
+
+        .messages {
+            height: 420px;
+            overflow-y: auto;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 10px;
+        }
+
+        .user, .bot {
+            margin: 6px 0;
+            padding: 10px;
+            border-radius: 6px;
+            max-width: 80%;
+        }
+
+        .user {
+            background: #d4f7d4;
+            text-align: right;
+            margin-left: auto;
+        }
+
+        .bot {
+            background: #e3f1ff;
+            text-align: left;
+            margin-right: auto;
+        }
+
+        #userInput {
+            width: 75%;
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 6px;
+        }
+
+        button {
+            width: 20%;
+            padding: 10px;
+            border: none;
+            background: rgb(17, 113, 156);
+            color: white;
+            cursor: pointer;
+            border-radius: 6px;
+        }
+
+        .quick-buttons {
+            margin-top: 10px;
+        }
+
+        .quick-buttons button {
+            width: auto;
+            padding: 6px 10px;
+            margin: 3px;
+            background: #444;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="chat-container">
+        <h2>Trichy Tourist Chatbot</h2>
+
+        <div class="messages" id="chatBox"></div>
+
+        <input type="text" id="userInput" placeholder="Ask about Trichy tourist places...">
+
+        <!-- FIXED SEND BUTTON -->
+        <button onclick="sendMessageFromUI()">Send</button>
+
+        <!-- Optional Quick Buttons -->
+        <div class="quick-buttons">
+            <button onclick="quickAsk('popular places')">Popular</button>
+            <button onclick="quickAsk('nearby places')">Nearby</button>
+            <button onclick="quickAsk('route from srirangam')">Route</button>
+            <button onclick="quickAsk('1 day plan from junction')">1-day Plan</button>
+        </div>
+    </div>
+
+    <script src="data.js"></script>
+    <script src="bot.js"></script>
+</body>
+</html>

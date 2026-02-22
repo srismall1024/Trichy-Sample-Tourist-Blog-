@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ucchi Pillayar Temple - Malaikottai</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: url("https://th.bing.com/th/id/R.7f141f2bb63333f6a936446c99d5d40c?rik=l8vkJFlFUcX0yg&riu=http%3a%2f%2f2.bp.blogspot.com%2f-Ujb-vQqXlSk%2fT086RR3SDfI%2fAAAAAAAADIg%2fbxjl9QsDEWI%2fs1600%2fucchi_pillayar_temple_rockfort.jpg&ehk=wktQekQBTdAruhMF9GIfsV8RrUIcNpUOZ38XeGs69Cc%3d&risl=&pid=ImgRaw&r=0&sres=1&sresct=1");
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            font-family: Arial, sans-serif;
+        }
+
+        h1 {
+            color: darkgreen;
+            text-align: center;
+            padding: 20px;
+            margin: 0;
+            background-color: rgba(255, 255, 255, 0.7);
+            border-bottom: 3px solid lightgray;
+        }
+
+        h3 {
+            text-align: center;
+            color: darkgreen;
+            font-size: 1.3rem;
+            margin: 10px 0;
+            border-bottom: 2px solid lightgray;
+        }
+
+        section {
+            background-color: rgba(255, 255, 255, 0.85);
+            margin: 30px auto;
+            padding: 20px;
+            width: 80%;
+            border-radius: 12px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.3);
+        }
+
+        h4 {
+            color: rgb(7, 107, 23);
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        p {
+            color: darkslategray;
+            background-color: blanchedalmond;
+            padding: 10px;
+            border-radius: 8px;
+            line-height: 1.6;
+            font-size: 1rem;
+        }
+
+        .myth {
+            background-color: burlywood;
+            margin-top: 10px;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            text-align: center;
+        }
+
+        nav ul li {
+            display: inline-block;
+            margin: 10px 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            background-color: darkgreen;
+            padding: 10px 15px;
+            border-radius: 6px;
+            transition: 0.3s;
+            font-weight: bold;
+        }
+
+        nav ul li a:hover {
+            background-color: darkorange;
+        }
+        #map{
+            display:none;
+        }
+        #veg{
+            background-color: rgb(201, 190, 175);
+            padding:10px 15px;
+            margin:20px auto;
+            border-radius: 12px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.3);
+            width:80%;
+            cursor:pointer;
+        }
+        #mapbtn{
+            display:block;
+            margin:20px auto;
+            padding:10px 15px;
+            background-color:darkgreen;
+            color:white;
+            border-radius:6px;
+            border:none;
+            cursor:pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Ucchi Pillayar Temple - Malaikottai</h1>
+    <h3>Tiruchirappalli, Tamil Nadu</h3>
+
+    <section>
+        <h4>About</h4>
+        <p>
+            The Ucchi Pillayar Temple is a revered Hindu shrine dedicated to Lord Ganesha, located atop the famous Rock Fort (Malaikottai) in Tiruchirappalli, Tamil Nadu. <br><br>
+            Dating back to the 7th century CE, this temple holds both mythological and historical importance. The towering rock fort rises sharply above the city and offers breathtaking views of Tiruchirappalli. <br><br>
+            According to legend, this is the place where Lord Ganesha eluded King Vibhishana of Lanka after installing the idol of Lord Ranganatha at Srirangam.
+        </p>
+
+        <p class="myth">
+            As the story goes, Ravana’s brother Vibhishana was gifted the idol of Lord Ranganatha by Lord Rama. While traveling through Tiruchirappalli, he entrusted the idol to a cowherd boy (Lord Vinayaka in disguise). <br><br>
+            Vinayaka placed the idol on the riverbank, making it immovable. Angered, Vibhishana chased him up the rock and struck him, leaving a scar on Vinayaka’s forehead — still believed to be visible today. <br><br>
+            Ganesha then revealed himself, blessed Vibhishana, and declared that the idol would remain in Srirangam permanently.
+        </p>
+    </section>
+
+    <section>
+        <h4>Location and Travel Methods</h4>
+        <p>
+            <strong>By Road (Bus):</strong> ~6 km from Old Central Bus Stand, ~15 km from Panjappur Integrated New Bus Terminal, and ~2 km from Chathiram Bus Stand. Frequent bus and auto services are available, especially from Chathiram and Teppakulam entrance. <br><br>
+            <strong>By Air:</strong> Nearest airport is Tiruchirappalli International Airport (~10 km). <br><br>
+            <strong>By Rail:</strong> Nearest stations are Tiruchirappalli Junction and Srirangam (~5 km).
+        </p>
+        <h4>Explore More Nearby</h4>
+        <nav>
+            <ul>
+                <li><a href="tem1.html">Srirangam Temple</a></li>
+                <li><a href="tem2.html">Thiruvanaikovil</a></li>
+                <li><a href="muku.html">Mukkombu Dam</a></li>
+            </ul>
+        </nav>
+    </section>
+    <button id="mapbtn" onclick="togglemap()">click here to view map</button>
+    <h3 id="veg">Nearby Veg restaurants</h3>
+    <iframe id="map"src="https://www.google.com/maps/d/u/0/embed?mid=1YN6JJnRsPHiiG7dz3BTrPZN5jNZ0bGc&ehbc=2E312F&noprof=1" width="640" height="480"></iframe>
+</body>
+<script>
+    function togglemap(){
+        var map=document.getElementById("map");
+        if(map.style.display=="none"){
+            map.style.display="block";
+        }
+        else{
+            map.style.display="none";
+        }
+    }
+</script>
+</html>

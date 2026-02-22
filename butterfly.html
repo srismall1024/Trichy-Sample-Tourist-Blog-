@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trichy Butterfly Park</title>
+  <style>
+    /* Background with overlay */
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-image: url("https://tse2.mm.bing.net/th/id/OIP.NyBMXVrPR6ubi68OA1U3DAHaE9?rs=1&pid=ImgDetMain&o=7&rm=3");
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      position: relative;
+      color: #fff;
+    }
+    body::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0, 0, 0, 0.5); /* dark overlay */
+      z-index: 0;
+    }
+
+    section {
+      position: relative;
+      z-index: 1;
+      padding: 2rem;
+    }
+
+    /* Headings */
+    h1 {
+      text-align: center;
+      color: #ffeb3b;
+      font-size: 3rem;
+      margin-top: 1rem;
+      animation: fadeInDown 2s ease;
+      text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+    }
+    h3 {
+      color: #ff9800;
+      font-size: 1.8rem;
+      margin-top: 2rem;
+      animation: fadeIn 3s ease;
+    }
+
+    /* Paragraph */
+    p {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 1.5rem;
+      border-radius: 15px;
+      font-size: 1.2rem;
+      line-height: 1.8;
+      font-weight: 500;
+      color: #e0ffe0;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+      animation: fadeInUp 2.5s ease;
+      backdrop-filter: blur(5px);
+    }
+
+    /* Navigation */
+    nav ul {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      gap: 1.5rem;
+      margin-top: 1rem;
+    }
+    nav ul li {
+      display: inline;
+    }
+    nav ul li a {
+      text-decoration: none;
+      color: #fff;
+      background: rgba(255, 152, 0, 0.9);
+      padding: 0.6rem 1.2rem;
+      border-radius: 30px;
+      font-weight: bold;
+      transition: 0.3s;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+    nav ul li a:hover {
+      background: #ffeb3b;
+      color: #333;
+      transform: scale(1.1);
+      box-shadow: 0 6px 15px rgba(0,0,0,0.5);
+    }
+
+    /* Animations */
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-50px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(50px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+  <section>
+    <h1>TRICHY BUTTERFLY PARK</h1>
+    <p>
+      The Tropical Butterfly Conservatory in Srirangam, located within the Upper Anaicut reserve forest, spans 25 acres in the Cauvery and Kollidam river basin. <br>
+      Recognized as the largest butterfly park in Asia, it was announced in 2012 by Chief Minister J. Jayalalithaa with a budget of ₹7.35 crore and inaugurated in 2015, later costing ₹8.67 crore. <br>
+      The park features landscaped lawns, a butterfly glasshouse, fountains, boating, playgrounds, sculptures, and a 1.2 km walkway filled with nectar plants to attract butterflies. <br>
+      A striking blue tiger butterfly sculpture welcomes visitors at the entrance. The park also includes Nakshatravanam, a “star forest” with 27 tree species linked to birth stars and 12 linked to zodiac signs, encouraging people to grow plants associated with their astrological sign. <br>
+      Designed for both recreation and education, the conservatory blends natural beauty with cultural symbolism, making it a unique attraction in Tamil Nadu.
+    </p>
+  </section>
+
+  <section>
+    <h3>Further Places to Visit</h3>
+    <nav>
+      <ul>
+        <li><a href="planet.html">Anna Planetorium</a></li>
+        <li><a href="birds.html">Trichy's Birds Park</a></li>
+      </ul>
+    </nav>
+  </section>
+  <iframe src="https://www.google.com/maps/d/u/0/embed?mid=17tI1DK5HVDpQhbwME8if-srQXxhnOIU&ehbc=2E312F&noprof=1" width="640" height="480"></iframe>
+</body>
+</html>

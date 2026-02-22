@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Thiruvanaikovil - Jambukeswarar Temple</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: url("https://www.holidify.com/images/cmsuploads/compressed/Tiruvanaikaval5_20190825175445.jpg");
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            font-family: Arial, sans-serif;
+        }
+
+        h1 {
+            color: darkgreen;
+            text-align: center;
+            padding: 20px;
+            margin: 0;
+            background-color: rgba(255, 255, 255, 0.7);
+            border-bottom: 3px solid lightgray;
+        }
+
+        h3 {
+            text-align: center;
+            color: darkgreen;
+            font-size: 1.3rem;
+            margin: 10px 0;
+            border-bottom: 2px solid lightgray;
+        }
+
+        section {
+            background-color: rgba(255, 255, 255, 0.85);
+            margin: 30px auto;
+            padding: 20px;
+            width: 80%;
+            border-radius: 12px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.3);
+        }
+
+        h4 {
+            color: rgb(7, 107, 23);
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        p {
+            color: darkslategray;
+            background-color: blanchedalmond;
+            padding: 10px;
+            border-radius: 8px;
+            line-height: 1.6;
+            font-size: 1rem;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            text-align: center;
+        }
+
+        nav ul li {
+            display: inline-block;
+            margin: 10px 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            background-color: darkgreen;
+            padding: 10px 15px;
+            border-radius: 6px;
+            transition: 0.3s;
+            font-weight: bold;
+        }
+
+        nav ul li a:hover {
+            background-color: darkorange;
+        }
+        #map{
+            display:none;
+        }
+        #mapbtn{
+            display:block;
+            margin:20px auto;
+            padding:10px 15px;
+            background-color:darkgreen;
+            color:white;
+            border-radius:6px;
+            border:none;
+            cursor:pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Thiruvanaikovil - Arulmigu Jambukeswarar Temple</h1>
+    <h3>Thiruvanaikovil, Tiruchirappalli</h3>
+
+    <section>
+        <h4>About</h4>
+        <p>
+            A well-known shrine devoted to Lord Shiva, the Jambukeswarar Temple is situated in Thiruvanaikaval near Tiruchirappalli, Tamil Nadu. <br><br>
+            Respected as one of the five Pancha Bhoota Sthalams, it represents the element of <b>water (Neer)</b>, one of the five elements of nature. <br><br>
+            In keeping with this depiction, the temple’s sanctum features an underground water spring that flows continuously, symbolizing its divine connection. <br><br>
+            The temple is one of the <b>275 Paadal Petra Sthalams</b>, glorified in the hymns of the Nayanmars (Tamil Saiva saints). <br><br>
+            Numerous Chola-era inscriptions attest to the temple’s ancient legacy. Here, Lord Shiva is worshipped as <b>Jambukeswarar</b> alongside <b>Goddess Akilandeswari</b>, a revered form of Parvati.
+        </p>
+    </section>
+
+    <section>
+        <h4>Location and Travel Methods</h4>
+        <p>
+            <strong>By Road (Bus):</strong> Located ~13 km from Old Central Bus Stand, ~18 km from Panjappur Integrated New Bus Terminal, and ~4 km from Chathiram Bus Stand. Buses and autos are available frequently. <br><br>
+            <strong>By Air:</strong> Nearest airport is Tiruchirappalli International Airport (~15 km). <br><br>
+            <strong>By Rail:</strong> Nearest station is Srirangam Railway Station (~3 km).
+        </p>
+    </section>
+    <button id="mapbtn" onclick="togglemap()">click here to view map</button>
+    <iframe id="map" src="https://www.google.com/maps/d/u/0/embed?mid=1XUm39h5L5zgqsAXrii7HIWjalkAzE_c&ehbc=2E312F&noprof=1" width="640" height="480"></iframe>
+
+    <section>
+        <h4>Explore More Nearby</h4>
+        <nav>
+            <ul>
+                <li><a href="tem1.html">Srirangam Temple</a></li>
+                <li><a href="basilca.html">Poondi Matha Basilica</a></li>
+                <li><a href="muku.html">Mukkombu Dam</a></li>
+            </ul>
+        </nav>
+    </section>
+</body>
+<script>
+    function togglemap(){
+         var maps=document.getElementById("map");
+         var mapbtn=document.getElementById("mapbtn");
+        if(maps.style.display=="none"){
+            maps.style.display="block";
+        }
+        else{
+            maps.style.display="none";
+        }
+    }
+    mapbtn.addEventListener("click",togglemap);
+</script>
+</html>

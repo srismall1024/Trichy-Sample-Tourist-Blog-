@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>About Trichy</title>
+
+<style>
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: #fafafa;
+  color: #333;
+}
+
+/* ----------------------- */
+/*   Hero / Navigation     */
+/* ----------------------- */
+
+.hero {
+  height: 60vh;
+  background: url('https://th.bing.com/th/id/OIP.HCNJqwnQuWg7JhDQEd2_1gHaEB?w=284&h=180&c=7&r=0&o=5&dpr=1.1&pid=1.7') 
+      no-repeat center center/cover;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: fadeInHero 1.5s ease-out;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+  animation: fadeOverlay 2s ease-in;
+}
+
+@keyframes fadeInHero {
+  0% { opacity: 0; transform: scale(1.1); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+@keyframes fadeOverlay {
+  0% { background: rgba(0,0,0,0.7); }
+  100% { background: rgba(0,0,0,0.45); }
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: white;
+  animation: slideDown 1.2s ease-out;
+}
+
+@keyframes slideDown {
+  0% { opacity: 0; transform: translateY(-40px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.hero h1 {
+  font-size: 48px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-bottom: 12px;
+}
+
+.hero p {
+  font-size: 18px;
+  opacity: 0.9;
+}
+
+/* Navigation bar */
+nav {
+  position: absolute;
+  top: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  z-index: 2;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+  background: rgba(255,255,255,0.15);
+  padding: 10px 30px;
+  border-radius: 40px;
+  backdrop-filter: blur(6px);
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #fff;
+  padding: 8px 18px;
+  border-radius: 25px;
+  transition: all .3s ease;
+  font-weight: 600;
+}
+
+nav ul li a:hover {
+  background: #fff;
+  color: #333;
+  transform: translateY(-3px);
+}
+
+/* ----------------------- */
+/*    About Section         */
+/* ----------------------- */
+
+.about-section {
+  max-width: 900px;
+  margin: -60px auto 60px;
+  background: #ffffff;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 10px 35px rgba(0,0,0,0.1);
+  animation: fadeUp 1.3s ease-out;
+}
+
+@keyframes fadeUp {
+  0% { opacity: 0; transform: translateY(50px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.about-section h3 {
+  font-size: 32px;
+  font-weight: 700;
+  color: #4CAF50;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.about-section p {
+  font-size: 17px;
+  line-height: 1.8;
+  text-align: justify;
+  animation: textFade 1.6s ease;
+}
+
+@keyframes textFade {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+/* Decorative line */
+.divider {
+  width: 80px;
+  height: 4px;
+  background: #4CAF50;
+  margin: 12px auto 30px;
+  border-radius: 2px;
+  animation: scaleIn 0.9s ease-out;
+}
+
+@keyframes scaleIn {
+  0% { transform: scaleX(0); }
+  100% { transform: scaleX(1); }
+}
+
+/* Smooth hover floating card effect */
+.about-section:hover {
+  transform: translateY(-6px);
+  transition: 0.3s ease;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+}
+</style>
+</head>
+
+<body>
+
+<!-- HERO SECTION -->
+<section class="hero">
+  <nav>
+    <ul>
+      <li><a href="index.html">AskChatbot</a></li>
+      <li><a href="temframes.html">Temples</a></li>
+      <li><a href="tourframe.html">Tourist Spots</a></li>
+    </ul>
+  </nav>
+
+  <div class="hero-content">
+    <h1>Welcome to Trichy</h1>
+    <p>The heart of Tamil Nadu’s culture, temple heritage, and river beauty.</p>
+  </div>
+</section>
+
+<!-- ABOUT SECTION -->
+<section class="about-section">
+  <h3>About Trichy</h3>
+  <div class="divider"></div>
+
+  <p>
+    Tiruchirappalli, lovingly known as Trichy, is a city where history breathes through every
+    rock, shrine, and riverbank.<br><br>
+
+    Once the proud capital of the great Chola empire (around 300 B.C.), the city later came under 
+    the influence of the Pallavas, Pandyas, Hoysalas, Nayaks, Mughals, French, and the British — 
+    each dynasty leaving behind layers of architectural wonder.<br><br>
+
+    The Nayaks gifted the city its most iconic landmark: the majestic Rock Fort Temple, overlooking 
+    the city along with the serene Teppakulam tank.<br><br>
+
+    Situated gracefully along the banks of the sacred Kaveri river, Trichy was a major battlefield 
+    during the Carnatic wars of the 18th century, shaping South Indian and British colonial history.<br><br>
+
+    Today, Trichy blends ancient glory with growing modernity. Be it the divinity of Srirangam, 
+    the calmness of Kallanai, or the beauty of Butterfly Park, the city offers something delightful 
+    for every traveler.<br><br>
+
+    Trichy isn’t just a place — it’s an experience.
+  </p>
+
+</section>
+
+</body>
+</html>

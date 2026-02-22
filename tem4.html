@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Vayalur Murugan Temple</title>
+        <style>
+            body{
+                background-image: url("https://as2.ftcdn.net/v2/jpg/02/87/86/15/1000_F_287861545_UXOiv8Ik6BKqWGxLwjLNKgOBbVBAFaHa.jpg");
+                background-size: cover;
+                background-attachment: fixed;
+                font-family: Arial, sans-serif;
+                margin: 0;
+                padding: 0;
+            }
+            h1,h3{
+                color: darkgreen;
+                border-bottom: 1px solid lightgray;
+                text-align: center;
+                background-color: rgba(255, 255, 255, 0.7);
+                padding: 10px;
+                margin: 0;
+            }
+            section{
+                padding: 20px;
+                background-color: rgba(255, 255, 255, 0.8);
+                margin: 20px;
+                border-radius: 10px;
+            }
+            p{
+                color: darkslategray;
+                background-color: blanchedalmond;
+                padding: 10px;
+                border-radius: 8px;
+                line-height: 1.6;
+            }
+            h4{
+                color: rgb(7, 107, 23);
+                font-weight: bold;
+                margin-top: 20px;
+                text-decoration: underline;
+            }
+            #map{
+            display:none;
+        }
+        #veg{
+            background-color: rgb(201, 190, 175);
+            padding:10px 15px;
+            margin:20px auto;
+            border-radius: 12px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.3);
+            width:80%;
+            cursor:pointer;
+        }
+        #mapbtn{
+            display:block;
+            margin:20px auto;
+            padding:10px 15px;
+            background-color:darkgreen;
+            color:white;
+            border-radius:6px;
+            border:none;
+            cursor:pointer;
+        }
+        </style>
+    </head>
+    <body>
+        <h1>Vayalur Murugan Temple</h1>
+        <h3>Kumaravayalur, Tiruchirappali</h3>
+        <section>
+            <h4>About</h4>
+            <div>
+                <p>The Vayalur Murugan Temple is a Hindu shrine devoted to Lord Muruga, son of Lord Shiva and Goddess Parvati, located in the village of Kumaravayalur, near Tiruchirapalli, Tamil Nadu.<br>
+                   Believed to have been established in the 9th century during the rule of the Medieval Cholas, this temple is maintained by the Tamil Nadu Hindu Religious and Charitable Endowments Department.<br>
+                   Although Lord Shiva (Adinathar) is the presiding deity, the temple is famous for its Murugan shrine, and it is associated with the saint Kirupanandha Variyar.</p>
+
+                <p>The temple, over 1200 years old, stands near the Uyyakondan River amidst scenic green fields.<br>
+                   Lord Murugan is enshrined behind the Shiva sannidhi, while Adinathar and his consort Adinayagi are worshipped in the main sanctum.<br>
+                   Notable shrines include Athi Nathar and Agni Theertham (Shakti Theertham), believed to have been created by Murugan using his Vel (spear).<br>
+                   The Vanni Maram near the Rajagopuram serves as the temple’s sacred tree, and the five-tiered gopuram adds to its architectural grandeur.</p>
+
+                <p>The 15th-century Tamil saint-poet Arunagirinathar, who composed the devotional hymns *Thirupugazh* praising Lord Murugan, is deeply connected to this temple.<br>
+                   After being saved from despair by Lord Murugan, Arunagirinathar visited Vayalur and sang soul-stirring verses, enhancing the temple’s spiritual significance.</p>
+            </div>
+            <div>
+                <h4>Location and Travel Methods</h4>
+                <p><b>By Road (Bus):</b> Located ~10 km from Old Central Bus Stand, ~19 km from Panjappur Integrated Bus Terminal, and ~13 km from Chathiram Bus Terminal.<br>
+                   Frequent buses and autos are available from Chathiram and Old Central Bus Terminals.<br><br>
+                   <b>By Air:</b> The nearest airport is Tiruchirappalli Airport (~16 km).<br>
+                   <b>By Rail:</b> The nearest railway station is Tiruchirappalli Junction (~11 km).</p>
+            </div>
+        </section>
+        <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1TTBajdA9n_AaQiF-gSj3b6LPye6H1II&ehbc=2E312F&noprof=1" width="640" height="480"></iframe>
+        <section>
+        <h4>Explore More Nearby</h4>
+        <nav>
+            <ul>
+                <li><a href="tem1.html">Srirangam Temple</a></li>
+                <li><a href="tem2.html">Thiruvanaikovil</a></li>
+                <li><a href="planet.html">Anna Science Planetarium</a></li>
+            </ul>
+        </nav>
+        </section>
+        <button id="mapbtn" onclick="togglemap()">click here to view map</button>
+        <h3 id="veg">Nearby veg restaurants</h3>
+        <iframe id="map" src="https://www.google.com/maps/d/u/0/embed?mid=1TTBajdA9n_AaQiF-gSj3b6LPye6H1II&ehbc=2E312F&noprof=1" width="640" height="480"></iframe>
+    </body>
+</html>

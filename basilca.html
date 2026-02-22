@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Poondi Madha Basilica</title>
+  <style>
+    /* Background with overlay */
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-image: url("https://media.istockphoto.com/id/2155668713/photo/entrance-to-the-our-lady-of-lourdes-or-poondi-madha-basilica-catholic-pilgrimage.jpg?s=170667a&w=0&k=20&c=VzVVC69BZDEsFIM63m6RCzqXRXPJh9IPhV-V5H9ZjTY=");
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      position: relative;
+      color: #fff;
+    }
+    body::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0, 0, 0, 0.55);
+      z-index: 0;
+    }
+
+    section {
+      position: relative;
+      z-index: 1;
+      padding: 2rem;
+    }
+
+    /* Headings */
+    h1 {
+      text-align: center;
+      color: #ffeb3b;
+      font-size: 3rem;
+      margin-top: 1rem;
+      animation: fadeInDown 2s ease;
+      text-transform: uppercase;
+      text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+    }
+    h3 {
+      color: #ff9800;
+      font-size: 1.8rem;
+      margin-top: 2rem;
+      animation: fadeIn 3s ease;
+    }
+
+    /* Paragraph */
+    p {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 1.5rem;
+      border-radius: 15px;
+      font-size: 1.2rem;
+      line-height: 1.8;
+      font-weight: 500;
+      color: #e0ffe0;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+      animation: fadeInUp 2.5s ease;
+      backdrop-filter: blur(6px);
+    }
+
+    /* Navigation */
+    nav ul {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      gap: 1.5rem;
+      margin-top: 1rem;
+    }
+    nav ul li {
+      display: inline;
+    }
+    nav ul li a {
+      text-decoration: none;
+      color: #fff;
+      background: rgba(156, 39, 176, 0.9); /* Purple shade for spiritual vibe */
+      padding: 0.6rem 1.2rem;
+      border-radius: 30px;
+      font-weight: bold;
+      transition: 0.3s;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+    nav ul li a:hover {
+      background: #ffeb3b;
+      color: #333;
+      transform: scale(1.1);
+      box-shadow: 0 6px 15px rgba(0,0,0,0.5);
+    }
+
+    /* Animations */
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-50px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(50px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+  <section>
+    <h1>Poondi Madha Basilica</h1>
+    <p>
+      Our Lady of Lourdes Basilica, popularly called Poondi Madha Basilica, is a famous Catholic pilgrimage site in Tamil Nadu, South India. <br>
+      Situated in the small village of Alamelupuram-Poondi near Thirukattupalli in Thanjavur district, it was elevated to the status of Minor Basilica by Pope John Paul II on August 3, 1999. <br>
+      Earlier, Cardinal Duraisamy Simon Lourdusamy had declared it a permanent pilgrimage centre dedicated to Our Lady of the Immaculate Conception. <br>
+      The church's design beautifully blends Gothic and French styles, featuring statues of the Twelve Apostles, St. Francis Xavier, and Fr. Beschi. Remarkably, it also houses a relic of the True Cross.
+    </p>
+  </section>
+
+  <section>
+    <h3>Further Places to Visit</h3>
+    <nav>
+      <ul>
+        <li><a href="planet.html">Anna Planetorium</a></li>
+        <li><a href="#">Trichy's Deer Park</a></li>
+      </ul>
+    </nav>
+  </section>
+</body>
+</html>
