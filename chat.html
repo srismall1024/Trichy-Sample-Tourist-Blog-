@@ -1,103 +1,138 @@
+
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Trichy Tourism Chatbot</title>
-    <style>
-        body {
-            font-family: Arial;
-            background: #f0f0f0;
-            display: flex;
-            justify-content: center;
-            padding-top: 40px;
-        }
+<title>Trichy Tourism Chatbot</title>
 
-        .chat-container {
-            width: 380px;
-            background: #fff;
-            border-radius: 12px;
-            padding: 20px;
-            box-shadow: 0px 0px 10px gray;
-        }
+<style>
 
-        .messages {
-            height: 420px;
-            overflow-y: auto;
-            border: 1px solid #ccc;
-            border-radius: 8px;
-            padding: 10px;
-        }
+body{
+font-family:Arial;
+background:#f0f0f0;
+display:flex;
+justify-content:center;
+padding-top:40px;
+}
 
-        .user, .bot {
-            margin: 6px 0;
-            padding: 10px;
-            border-radius: 6px;
-            max-width: 80%;
-        }
+.chat-container{
+width:380px;
+background:#fff;
+border-radius:12px;
+padding:20px;
+box-shadow:0px 0px 10px gray;
+}
 
-        .user {
-            background: #d4f7d4;
-            text-align: right;
-            margin-left: auto;
-        }
+.messages{
+height:420px;
+overflow-y:auto;
+border:1px solid #ccc;
+border-radius:8px;
+padding:10px;
+}
 
-        .bot {
-            background: #e3f1ff;
-            text-align: left;
-            margin-right: auto;
-        }
+.user,.bot{
+margin:6px 0;
+padding:10px;
+border-radius:6px;
+max-width:80%;
+}
 
-        #userInput {
-            width: 75%;
-            padding: 10px;
-            margin-top: 10px;
-            border-radius: 6px;
-        }
+.user{
+background:#d4f7d4;
+text-align:right;
+margin-left:auto;
+}
 
-        button {
-            width: 20%;
-            padding: 10px;
-            border: none;
-            background: rgb(17, 113, 156);
-            color: white;
-            cursor: pointer;
-            border-radius: 6px;
-        }
+.bot{
+background:#e3f1ff;
+text-align:left;
+margin-right:auto;
+}
 
-        .quick-buttons {
-            margin-top: 10px;
-        }
+#userInput{
+width:75%;
+padding:10px;
+margin-top:10px;
+border-radius:6px;
+}
 
-        .quick-buttons button {
-            width: auto;
-            padding: 6px 10px;
-            margin: 3px;
-            background: #444;
-            border-radius: 5px;
-        }
-    </style>
+button{
+width:20%;
+padding:10px;
+border:none;
+background:rgb(17,113,156);
+color:white;
+cursor:pointer;
+border-radius:6px;
+}
+
+.quick-buttons{
+margin-top:10px;
+}
+
+.quick-buttons button{
+width:auto;
+padding:6px 10px;
+margin:3px;
+background:#444;
+border-radius:5px;
+}
+
+</style>
 </head>
 
 <body>
-    <div class="chat-container">
-        <h2>Trichy Tourist Chatbot</h2>
 
-        <div class="messages" id="chatBox"></div>
+<div class="chat-container">
 
-        <input type="text" id="userInput" placeholder="Ask about Trichy tourist places...">
+<h2>Trichy Tourist Chatbot</h2>
 
-        <!-- FIXED SEND BUTTON -->
-        <button onclick="sendMessageFromUI()">Send</button>
+<div class="messages" id="chatBox"></div>
 
-        <!-- Optional Quick Buttons -->
-        <div class="quick-buttons">
-            <button onclick="quickAsk('popular places')">Popular</button>
-            <button onclick="quickAsk('nearby places')">Nearby</button>
-            <button onclick="quickAsk('route from srirangam')">Route</button>
-            <button onclick="quickAsk('1 day plan from junction')">1-day Plan</button>
-        </div>
-    </div>
+<input
+type="text"
+id="userInput"
+placeholder="Ask about Trichy tourist places..."
+>
 
-    <script src="data.js"></script>
-    <script src="bot.js"></script>
+<button onclick="sendMessage()">Send</button>
+
+<div class="quick-buttons">
+
+<button onclick="quickAsk('popular places')">Popular</button>
+
+<button onclick="quickAsk('tell me about srirangam')">
+Srirangam
+</button>
+
+<button onclick="quickAsk('nearby rockfort')">
+Nearby
+</button>
+
+<button onclick="quickAsk('1 day plan from srirangam')">
+1-day Plan
+</button>
+
+</div>
+
+</div>
+
+<script src="data.js"></script>
+<script src="bot.js"></script>
+
+<script>
+
+document
+.getElementById("userInput")
+.addEventListener("keypress",function(e){
+
+if(e.key==="Enter"){
+sendMessage();
+}
+
+});
+
+</script>
+
 </body>
 </html>
