@@ -1,3 +1,4 @@
+
 // =====================================
 //      TRICHY TOURISM – FINAL BOT.JS
 // =====================================
@@ -18,6 +19,7 @@ function normalizeText(s) {
 // GREETING DETECTOR
 // -------------------------------------
 function detectGreeting(msg) {
+
     msg = normalizeText(msg);
 
     const greetings = ["hi", "hello", "hey", "vanakkam"];
@@ -29,9 +31,9 @@ function detectGreeting(msg) {
 // LEVENSHTEIN DISTANCE
 // -------------------------------------
 function levenshtein(a, b) {
-    a = a || "";
-    b = b || "";
-    const m = a.length, n = b.length;
+
+    const m = a.length;
+    const n = b.length;
 
     const dp = Array.from({ length: m + 1 }, () =>
         new Array(n + 1).fill(0)
@@ -41,6 +43,7 @@ function levenshtein(a, b) {
     for (let j = 0; j <= n; j++) dp[0][j] = j;
 
     for (let i = 1; i <= m; i++) {
+
         for (let j = 1; j <= n; j++) {
 
             const cost = a[i - 1] === b[j - 1] ? 0 : 1;
@@ -60,10 +63,12 @@ function levenshtein(a, b) {
 // SIMILARITY SCORE
 // -------------------------------------
 function similarity(a, b) {
+
     a = normalizeText(a);
     b = normalizeText(b);
 
     const d = levenshtein(a, b);
+
     const maxLen = Math.max(a.length, b.length, 1);
 
     return 1 - d / maxLen;
@@ -83,14 +88,17 @@ const AliasIndex = (() => {
         aliases.add(normalizeText(place.name));
 
         if (place.also_known_as)
-            place.also_known_as.forEach(a => aliases.add(normalizeText(a)));
+            place.also_known_as.forEach(a =>
+                aliases.add(normalizeText(a))
+            );
 
         if (place.keywords)
-            place.keywords.forEach(k => aliases.add(normalizeText(k)));
+            place.keywords.forEach(k =>
+                aliases.add(normalizeText(k))
+            );
 
         for (const a of aliases)
             list.push({ alias: a, place });
-
     }
 
     return list;
@@ -112,6 +120,7 @@ function resolvePlace(msg) {
         const score = similarity(msg, entry.alias);
 
         if (score > bestScore && score >= 0.45) {
+
             best = entry.place;
             bestScore = score;
         }
@@ -144,7 +153,8 @@ function findDistanceKey(placeName) {
 function getSortedNearby(key) {
 
     const row = trichyData.distances[key];
-    if (!row) return null;
+
+    if (!row) return [];
 
     return Object.entries(row)
         .sort((a, b) => a[1] - b[1])
@@ -157,7 +167,9 @@ function getSortedNearby(key) {
 function generateRouteFrom(key) {
 
     const list = getSortedNearby(key);
-    if (!list) return null;
+
+    if (!list.length)
+        return "No route data available.";
 
     return `<b>Best Route:</b><br>${list.join(" → ")}`;
 }
@@ -168,11 +180,14 @@ function generateRouteFrom(key) {
 function buildOneDayItinerary(startPlace) {
 
     const key = findDistanceKey(startPlace.name);
-    if (!key) return "No route data available.";
+
+    if (!key)
+        return "No route data available.";
 
     const nearby = getSortedNearby(key);
 
-    const placesOnly = nearby.map(x => x.split(" - ")[0]);
+    const placesOnly =
+        nearby.map(x => x.split(" - ")[0]);
 
     return `
 <b>🌅 1-Day Trip Plan from ${startPlace.name}</b><br><br>
@@ -187,10 +202,12 @@ ${placesOnly.join(" → ")}<br><br>
 // -------------------------------------
 function formatPlace(place) {
 
-    let text = `<b>${place.name}</b><br><br>${place.about}<br><br>`;
+    let text =
+        `<b>${place.name}</b><br><br>${place.about}<br><br>`;
 
     if (place.location)
-        text += `<b>📍 Location:</b> ${place.location}<br><br>`;
+        text +=
+            `<b>📍 Location:</b> ${place.location}<br><br>`;
 
     if (place.travel) {
 
@@ -265,6 +282,7 @@ You can ask things like:
         return getPopularPlaces();
 
     const intent = detectIntent(msg);
+
     const place = resolvePlace(msg);
 
     if (!place)
@@ -285,6 +303,7 @@ Try asking about:
     if (intent === "nearby") {
 
         const key = findDistanceKey(place.name);
+
         const list = getSortedNearby(key);
 
         return `<b>Nearby places from ${place.name}</b><br><br>${list.join("<br>")}`;
@@ -308,9 +327,11 @@ Try asking about:
 // -------------------------------------
 function addMessageToUI(text, sender) {
 
-    const box = document.getElementById("chatBox");
+    const box =
+        document.getElementById("chatBox");
 
-    const div = document.createElement("div");
+    const div =
+        document.createElement("div");
 
     div.className = sender;
 
@@ -320,8 +341,17 @@ function addMessageToUI(text, sender) {
         box.appendChild(div);
 
         setTimeout(() => {
+
             div.innerHTML = text;
-        }, 600);
+
+            const speech =
+                new SpeechSynthesisUtterance(
+                    text.replace(/<[^>]+>/g, "")
+                );
+
+            window.speechSynthesis.speak(speech);
+
+        }, 700);
 
     } else {
 
@@ -330,20 +360,12 @@ function addMessageToUI(text, sender) {
     }
 
     box.scrollTop = box.scrollHeight;
-
-    if (sender === "bot") {
-
-        const speech = new SpeechSynthesisUtterance(
-            text.replace(/<[^>]+>/g, "")
-        );
-
-        window.speechSynthesis.speak(speech);
-    }
 }
 
 function sendMessage() {
 
-    const input = document.getElementById("userInput");
+    const input =
+        document.getElementById("userInput");
 
     const text = input.value.trim();
 
@@ -367,3 +389,4 @@ function quickAsk(text) {
 
     sendMessage();
 }
+
