@@ -112,6 +112,15 @@ function resolvePlace(msg) {
 
     msg = normalizeText(msg);
 
+    // First try direct keyword detection
+    for (const entry of AliasIndex) {
+
+        if (msg.includes(entry.alias)) {
+            return entry.place;
+        }
+    }
+
+    // If not found, use fuzzy similarity
     let best = null;
     let bestScore = 0;
 
@@ -120,7 +129,6 @@ function resolvePlace(msg) {
         const score = similarity(msg, entry.alias);
 
         if (score > bestScore && score >= 0.45) {
-
             best = entry.place;
             bestScore = score;
         }
@@ -389,4 +397,5 @@ function quickAsk(text) {
 
     sendMessage();
 }
+
 
