@@ -1,138 +1,65 @@
-
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Trichy Tourism Chatbot</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trichy Tourism - Digital Travel Guide</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --accent: #27ae60;
+            --bg: #f4f7f6;
+            --white: #ffffff;
+        }
 
-<style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: var(--bg); margin: 0; padding: 20px; color: #333; }
+        .container { max-width: 1000px; margin: 0 auto; }
+        
+        header { text-align: center; margin-bottom: 30px; background: var(--primary); color: white; padding: 20px; border-radius: 12px; }
+        
+        .action-bar { display: flex; justify-content: flex-end; margin-bottom: 20px; }
+        .btn-download { background: var(--accent); color: white; border: none; padding: 10px 20px; border-radius: 6px; cursor: pointer; font-weight: bold; }
 
-body{
-font-family:Arial;
-background:#f0f0f0;
-display:flex;
-justify-content:center;
-padding-top:40px;
-}
+        .junction-section { margin-bottom: 30px; }
+        .junction-title { border-left: 5px solid var(--accent); padding-left: 15px; margin-bottom: 15px; color: var(--primary); }
 
-.chat-container{
-width:380px;
-background:#fff;
-border-radius:12px;
-padding:20px;
-box-shadow:0px 0px 10px gray;
-}
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+        .card { background: var(--white); padding: 20px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        .card h3 { margin-top: 0; color: var(--accent); border-bottom: 1px solid #eee; padding-bottom: 10px; }
+        
+        .distance-tag { display: inline-block; background: #e8f5e9; color: #2e7d32; padding: 4px 8px; border-radius: 4px; font-size: 0.85em; margin-top: 10px; }
+        
+        .upcoming-box { background: #fff3e0; border: 1px dashed #ff9800; padding: 20px; border-radius: 10px; margin-top: 40px; }
+        .upcoming-grid { columns: 2; gap: 20px; }
 
-.messages{
-height:420px;
-overflow-y:auto;
-border:1px solid #ccc;
-border-radius:8px;
-padding:10px;
-}
-
-.user,.bot{
-margin:6px 0;
-padding:10px;
-border-radius:6px;
-max-width:80%;
-}
-
-.user{
-background:#d4f7d4;
-text-align:right;
-margin-left:auto;
-}
-
-.bot{
-background:#e3f1ff;
-text-align:left;
-margin-right:auto;
-}
-
-#userInput{
-width:75%;
-padding:10px;
-margin-top:10px;
-border-radius:6px;
-}
-
-button{
-width:20%;
-padding:10px;
-border:none;
-background:rgb(17,113,156);
-color:white;
-cursor:pointer;
-border-radius:6px;
-}
-
-.quick-buttons{
-margin-top:10px;
-}
-
-.quick-buttons button{
-width:auto;
-padding:6px 10px;
-margin:3px;
-background:#444;
-border-radius:5px;
-}
-
-</style>
+        @media (max-width: 600px) { .upcoming-grid { columns: 1; } }
+    </style>
 </head>
-
 <body>
 
-<div class="chat-container">
+<div class="container" id="tour-content">
+    <header>
+        <h1>🚩 Tiruchirappalli Tourism Guide</h1>
+        <p>Plan your journey based on your arrival point</p>
+    </header>
 
-<h2>Trichy Tourist Chatbot</h2>
+    <div class="action-bar">
+        <button class="btn-download" onclick="downloadPDF()">📥 Download Itinerary (PDF)</button>
+    </div>
 
-<div class="messages" id="chatBox"></div>
+    <div id="main-guide">
+        </div>
 
-<input
-type="text"
-id="userInput"
-placeholder="Ask about Trichy tourist places..."
->
-
-<button onclick="sendMessage()">Send</button>
-
-<div class="quick-buttons">
-
-<button onclick="quickAsk('popular places')">Popular</button>
-
-<button onclick="quickAsk('tell me about srirangam')">
-Srirangam
-</button>
-
-<button onclick="quickAsk('nearby rockfort')">
-Nearby
-</button>
-
-<button onclick="quickAsk('1 day plan from srirangam')">
-1-day Plan
-</button>
-
-</div>
-
+    <div class="upcoming-box">
+        <h3>✨ Upcoming Updates (Places to be Added)</h3>
+        <p><i>You can visit these places whenever you are passing nearby:</i></p>
+        <div class="upcoming-grid" id="upcoming-list"></div>
+        <p style="margin-top: 15px; font-size: 0.9em; color: #666;">Note: Nearby veg restaurants are available near main temple entrances.</p>
+    </div>
 </div>
 
 <script src="data.js"></script>
-<script src="bot.js"></script>
-
-<script>
-
-document
-.getElementById("userInput")
-.addEventListener("keypress",function(e){
-
-if(e.key==="Enter"){
-sendMessage();
-}
-
-});
-
-</script>
-
+<script src="script.js"></script>
 </body>
 </html>
